@@ -1202,9 +1202,6 @@ int main(int argc, char *argv[])
 
     printf("Final throughput = %.4f mops\n", (double)glbl_ops * 1000. / 
         (double)(get_nanos() - t_start - warmup_time * 1000000000UL));
-    for(i = 0; i < HIST_BUCKETS; ++i)
-        if(glbl_hist[i] != 0)
-            printf("Hist[%d]=%d\n", i*HIST_BUCKET_NS, glbl_hist[i]);
 
 #ifdef USE_MTCP
     mtcp_destroy();
